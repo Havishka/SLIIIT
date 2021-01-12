@@ -1,0 +1,2 @@
+[13-Jul-2017 06:12:16 America/Chicago] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'caddcent_user'@'192.185.21.193' (using password: YES) in /home3/caddcentre/public_html/sys/DB_3.php on line 21
+[13-Jul-2017 06:12:39 America/Chicago] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'caddcent_user'@'192.185.21.193' (using password: YES) in /home3/caddcentre/public_html/sys/DB_3.php on line 21
