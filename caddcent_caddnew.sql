@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 05, 2021 at 03:23 PM
+-- Generation Time: Jan 14, 2021 at 08:21 AM
 -- Server version: 10.4.14-MariaDB
--- PHP Version: 7.4.11
+-- PHP Version: 7.2.34
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -273,6 +273,26 @@ INSERT INTO `course_installment` (`course_id`, `installment_01`, `installment_02
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `c_assign`
+--
+
+CREATE TABLE `c_assign` (
+  `id` int(11) NOT NULL,
+  `l_name` varchar(55) NOT NULL,
+  `c_name` varchar(100) NOT NULL,
+  `assign` varchar(1) NOT NULL DEFAULT 'F'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `c_assign`
+--
+
+INSERT INTO `c_assign` (`id`, `l_name`, `c_name`, `assign`) VALUES
+(94, 'Johnnn', 'FCADD-11-NOV-2017-SAT-AFT', 'F');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `discount_group`
 --
 
@@ -332,6 +352,7 @@ CREATE TABLE `lecture_reg` (
   `l_name` varchar(50) NOT NULL,
   `email` varchar(100) NOT NULL,
   `phone` int(15) NOT NULL,
+  `password` varchar(55) NOT NULL,
   `r_date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -339,8 +360,8 @@ CREATE TABLE `lecture_reg` (
 -- Dumping data for table `lecture_reg`
 --
 
-INSERT INTO `lecture_reg` (`id`, `nic`, `f_name`, `l_name`, `email`, `phone`, `r_date`) VALUES
-(3, '995562256V', 'John', 'Doe', 'info@hrsale.com', 123456789, '2021-01-05');
+INSERT INTO `lecture_reg` (`id`, `nic`, `f_name`, `l_name`, `email`, `phone`, `password`, `r_date`) VALUES
+(10, '995562256V', 'Havishka', 'Halangoda', 'havishkahalangoda@gmail.com', 2147483647, '$2y$10$.ks5I4gabcb5Gd/xGCcjpOnuqeU2xVRmj1uRPE0agduwnZgA', '2021-01-13');
 
 -- --------------------------------------------------------
 
@@ -5162,6 +5183,33 @@ INSERT INTO `student_pre_course` (`id`, `nic`, `last_course_id`, `count_course`)
 (559, '971023945V', 33, 1),
 (560, '958110545V', 33, 1);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `t_time`
+--
+
+CREATE TABLE `t_time` (
+  `id` int(11) NOT NULL,
+  `le_name` varchar(100) NOT NULL,
+  `co_name` varchar(100) NOT NULL,
+  `s_time` time(6) NOT NULL,
+  `e_time` time(6) NOT NULL,
+  `to_time` double NOT NULL,
+  `approval` text NOT NULL DEFAULT 'Not Approved',
+  `sy_time` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `t_time`
+--
+
+INSERT INTO `t_time` (`id`, `le_name`, `co_name`, `s_time`, `e_time`, `to_time`, `approval`, `sy_time`) VALUES
+(1, 'Johnn', 'FCADD-11-NOV-2017-SAT-AFT', '13:50:00.000000', '21:50:00.000000', 0, 'Not Approved', '2021-01-11 15:21:15'),
+(2, 'Johnn', 'FCADD-11-NOV-2017-SAT-AFT', '13:50:00.000000', '21:50:00.000000', 0, 'Not Approved', '2021-01-12 13:33:40'),
+(3, 'Johnn', 'FCADD-11-NOV-2017-SAT-AFT', '13:50:00.000000', '21:50:00.000000', 0, 'Not Approved', '2021-01-12 13:34:34'),
+(4, 'Johnn', 'FCADD-11-NOV-2017-SAT-AFT', '13:50:00.000000', '21:50:00.000000', 0, 'Not Approved', '2021-01-12 13:36:09');
+
 --
 -- Indexes for dumped tables
 --
@@ -5196,6 +5244,12 @@ ALTER TABLE `course`
 --
 ALTER TABLE `course_installment`
   ADD PRIMARY KEY (`course_id`);
+
+--
+-- Indexes for table `c_assign`
+--
+ALTER TABLE `c_assign`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `discount_group`
@@ -5306,6 +5360,12 @@ ALTER TABLE `student_pre_course`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `t_time`
+--
+ALTER TABLE `t_time`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -5328,6 +5388,12 @@ ALTER TABLE `course`
   MODIFY `course_id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 
 --
+-- AUTO_INCREMENT for table `c_assign`
+--
+ALTER TABLE `c_assign`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=95;
+
+--
 -- AUTO_INCREMENT for table `discount_group`
 --
 ALTER TABLE `discount_group`
@@ -5343,7 +5409,7 @@ ALTER TABLE `discount_member`
 -- AUTO_INCREMENT for table `lecture_reg`
 --
 ALTER TABLE `lecture_reg`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `log`
@@ -5416,6 +5482,12 @@ ALTER TABLE `student_phone`
 --
 ALTER TABLE `student_pre_course`
   MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=561;
+
+--
+-- AUTO_INCREMENT for table `t_time`
+--
+ALTER TABLE `t_time`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
