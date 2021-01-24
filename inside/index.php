@@ -1,4 +1,5 @@
 <?php
+
 	include("../check.php");	
 	include("connection.php");
 
@@ -69,7 +70,7 @@ if($le==1){
 				
                     </ul>
                   </li>
-				
+				  <li><a href="../inside/Lecture/a_index.php"><i class="fa fa-desktop" ></i>Lecture Approval<span class=""></span></a></li>
 				  
 				  		 <li><a><i class="fa fa-edit"></i>Manage<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
@@ -101,7 +102,8 @@ if($le==1){
 					    <li><a href="index.php?tab=batch_report">View Batch Report</a></li>
  
                     </ul>
-                  </li>
+				  </li>
+				  <li><a href="../inside/Lecture/index.php"><i class="fa fa-desktop" ></i>Lecture Manage<span class=""></span></a></li>
 				  
 				  
 				  ';	
@@ -185,6 +187,13 @@ else if($le==3){
                       <li><a href="index.php?tab=viewdiscount">Course Discounts</a></li>
            
                     </ul>
+                  </li>
+				  
+                    
+                     
+                      
+           
+                    
                   </li>
   
 				  <?php echo $tabs;?>

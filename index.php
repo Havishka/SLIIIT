@@ -344,18 +344,24 @@ input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgb
         <input type="password" name="password"  placeholder="Password" required="required" />
         
       <button type="submit" name="submit"  class="btn btn-primary btn-block btn-large">Login</button>
+	  
         
       
         <h3><div align="center" style="color:white; font-size:16px; "><?php echo $error;?></div></h3>
       
     </form>
-    
+	
 
     
     
     
+    <label><a  href="../sys1/inside/Lecture/login.php"> Lecture Login</a> </label>
+	
+	
     
     
+    
+ 
     
     
     
